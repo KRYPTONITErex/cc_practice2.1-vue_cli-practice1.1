@@ -21,11 +21,27 @@
         <a href="">SignUp</a><a href="">LogIn</a>
       </template>
 
+    </AppModal>
+  </div>
+  <button id="btn" @click="showModal=!showModal" >Show Modal</button>
+
+  <div v-if="showModalLP">
+    <AppModal 
+      :header="header"
+      :content="content"
+      :theme="theme" 
+      @closeModal="showModalLP = false">
+
+      <h2>HomeWork successful</h2>
+      <p>Welcome all KO LWIN !!</p>
+
+      <template v-slot:links>
+        <a href="">SignUp</a><a href="">LogIn</a>
+      </template>
 
     </AppModal>
   </div>
-
-  <button @click.shift="showModal=!showModal" >Show Modal</button>
+  <button @click="showModalLP=!showModalLP" >Show Modal LP</button>
 
 </template>
 
@@ -40,9 +56,10 @@ export default {
     return {
       header: "Login Success",
       content: "Welocome all users",
-      theme: "success",
-      // theme: "fail",
-      showModal: false
+      // theme: "success",
+      theme: "fail",
+      showModal: false,
+      showModalLP: false
     }
   },
 
@@ -111,6 +128,14 @@ button:last-of-type:hover {
 div {
   margin-top: 20px;
   text-align: center;
+}
+
+#btn {
+  background-color: #e74c3c;
+}
+
+#btn:hover {
+  background-color: #c0392b;  
 }
 
 </style>

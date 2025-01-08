@@ -25,8 +25,27 @@
     
     </Modal>
   </div>
+  <button @click="showModal = !showModal">show modal</button>
 
-  <button @click.shift="showModal = !showModal">show modal</button>
+
+  <div v-if="showModalLP">
+    <Modal 
+      :header="header" 
+      :content="content"
+      :theme="theme"
+      @closeModal="showModalLP = !showModalLP">
+    
+      <h1>This is KO Lwin Phyo success</h1>
+      <p>Congratulations</p>
+
+      <template v-slot:links>
+        <a href="">Sign Up</a>
+        <a href="">Login</a>
+      </template>
+    </Modal>
+
+  </div>
+  <button @click="showModalLP = !showModalLP">Lwin Phyo Modal</button>
 
 
 </template>
@@ -40,9 +59,10 @@
       return {
         header: "Login is success",
         content: "Welcome user KoLwinPhyo",
-        theme: "success",
-        // theme: "danger",
-        showModal: false
+        // theme: "success",
+        theme: "danger",
+        showModal: false,
+        showModalLP: false
       }
     },
     methods: {
@@ -61,10 +81,6 @@
 
 <style>
 
-  h1{
-    color: rgb(255, 251, 0);
-
-  }
   div{
     color: green;
 

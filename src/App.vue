@@ -8,11 +8,16 @@
   <input type="text" ref="name">
   <button @click="clickHandler">click</button>
 
-  <Modal 
-    :header="header" 
-    :content="content"
-    :theme="theme">
-  </Modal>
+  <div v-if="showModal">
+    <Modal 
+      :header="header" 
+      :content="content"
+      :theme="theme"
+      @closeModal="showModal = !showModal">
+    </Modal>
+  </div>
+
+  <button @click.shift="showModal = !showModal">show modal</button>
 
 
 </template>
@@ -26,8 +31,9 @@
       return {
         header: "Login is success",
         content: "Welcome user KoLwinPhyo",
-        // theme: "success",
-        theme: "danger"
+        theme: "success",
+        // theme: "danger",
+        showModal: false
       }
     },
     methods: {

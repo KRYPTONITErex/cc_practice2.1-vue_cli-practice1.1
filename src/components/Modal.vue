@@ -1,5 +1,5 @@
 <template>
-  <div class="backdrop">
+  <div class="backdrop" @click.self="closeModal">
     <div class="modal" :class="{success: theme === 'success', danger: theme === 'danger'}">
 
       <h2>{{ header }}</h2>
@@ -16,6 +16,12 @@
 <script>
   export default {
     props: ['header', 'content', 'theme'],
+    methods: {
+      closeModal() {
+        // alert('close modal')
+        this.$emit('closeModal')
+      }
+    }
   }
 </script>
 

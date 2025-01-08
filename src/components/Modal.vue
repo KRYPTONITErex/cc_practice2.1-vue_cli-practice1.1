@@ -2,9 +2,11 @@
   <div class="backdrop" @click.self="closeModal">
     <div class="modal" :class="{success: theme === 'success', danger: theme === 'danger'}">
 
-      <h2>{{ header }}</h2>
-      <p>{{ content }}</p>
+      <slot>
+        default
+      </slot>
 
+      <slot name="links"></slot>
 
     </div>
   </div>
@@ -15,7 +17,7 @@
 
 <script>
   export default {
-    props: ['header', 'content', 'theme'],
+    props: [ 'theme'],
     methods: {
       closeModal() {
         // alert('close modal')

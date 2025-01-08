@@ -14,6 +14,15 @@
       :content="content"
       :theme="theme"
       @closeModal="showModal = !showModal">
+    
+      <h1>Login is Successful</h1>
+      <p>Welcome users Ko Lwin</p>
+
+      <template v-slot:links>
+        <a href="">Sign Up</a>
+        <a href="">Login</a>
+      </template>
+    
     </Modal>
   </div>
 
@@ -53,7 +62,7 @@
 <style>
 
   h1{
-    color: red;
+    color: rgb(255, 251, 0);
 
   }
   div{

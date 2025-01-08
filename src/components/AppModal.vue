@@ -5,8 +5,14 @@
         :class="{success: theme ==='success' , 
         fail: theme === 'fail' }">
 
-            <h2>{{ header }}</h2>
-            <p>{{ content }}</p>
+            <!-- <h2>{{ header }}</h2>
+            <p>{{ content }}</p> -->
+
+            <slot>default
+              <h3>check your input again</h3>
+            </slot>
+            <slot name="links"></slot>
+
         </div>
     </div>
   
@@ -15,7 +21,7 @@
 <script>
     export default {
         
-    props: ['header', 'content', 'theme'],
+    props: [ 'theme'],
     methods: {
         closeModal(){
             this.$emit('closeModal')

@@ -13,6 +13,15 @@
       :content="content"
       :theme="theme" 
       @closeModal="showModal = false">
+
+      <!-- <h2>Login is successful</h2>
+      <p>Welcome all users !!</p> -->
+
+      <template v-slot:links>
+        <a href="">SignUp</a><a href="">LogIn</a>
+      </template>
+
+
     </AppModal>
   </div>
 
@@ -31,8 +40,8 @@ export default {
     return {
       header: "Login Success",
       content: "Welocome all users",
-      // theme: "success",
-      theme: "fail",
+      theme: "success",
+      // theme: "fail",
       showModal: false
     }
   },

@@ -7,10 +7,16 @@
   <input type="text" ref="focus">
   <button @click="clickHandler" ref="name">click</button>
 
-  <AppModal 
-  :header="header"
-  :content="content"
-  :theme="theme" ></AppModal>
+  <div v-if="showModal">
+    <AppModal 
+      :header="header"
+      :content="content"
+      :theme="theme" 
+      @closeModal="showModal = false">
+    </AppModal>
+  </div>
+
+  <button @click.shift="showModal=!showModal" >Show Modal</button>
 
 </template>
 
@@ -25,8 +31,9 @@ export default {
     return {
       header: "Login Success",
       content: "Welocome all users",
-      theme: "success"
-      // theme: "fail"
+      // theme: "success",
+      theme: "fail",
+      showModal: false
     }
   },
 
@@ -44,6 +51,57 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+h1 {
+  font-size: 24px;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80%;
+  font-size: 16px;
+}
+
+button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:first-of-type {
+  background-color: #3498db;
+}
+
+button:first-of-type:hover {
+  background-color: #2980b9;
+}
+
+button:last-of-type {
+  background-color: #2ecc71;
+}
+
+button:last-of-type:hover {
+  background-color: #27ae60;
+}
+
+div {
+  margin-top: 20px;
+  text-align: center;
+}
 
 </style>

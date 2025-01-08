@@ -1,7 +1,9 @@
 <template>
 
-    <div class="modal" 
-    :class="{success: theme ==='success' , fail: theme === 'fail' }">
+    <div class="modal"
+    :class="{success: theme ==='success' , 
+    fail: theme === 'fail' }">
+
         <h2>{{ header }}</h2>
         <p>{{ content }}</p>
     </div>
@@ -9,10 +11,11 @@
 </template>
 
 <script>
-export default {
-   props: ['header', 'content', 'theme']
+    export default {
+        
+    props: ['header', 'content', 'theme']
 
-}
+    }
 </script>
 
 <style scoped>

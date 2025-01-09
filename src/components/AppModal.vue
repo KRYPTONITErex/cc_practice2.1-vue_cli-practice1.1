@@ -71,7 +71,7 @@
 }
 
 .success {
-  background-color: #017364;
+  background-color: #04b59e;
   color: #ffffff;
 }
 

@@ -14,8 +14,8 @@
       :theme="theme" 
       @closeModal="showModal = false">
 
-      <!-- <h2>Login is successful</h2>
-      <p>Welcome all users !!</p> -->
+      <h2>Want to Log Out?</h2>
+      <p>See you all users !!</p>
 
       <template v-slot:links>
         <a href="">SignUp</a><a href="">LogIn</a>
@@ -23,17 +23,17 @@
 
     </AppModal>
   </div>
-  <button id="btn" @click="showModal=!showModal" >Show Modal</button>
+  <button id="btn" @click="showModal=!showModal" >Close Modal</button>
 
   <div v-if="showModalLP">
     <AppModal 
       :header="header"
       :content="content"
-      :theme="theme" 
+      theme="success" 
       @closeModal="showModalLP = false">
 
-      <h2>HomeWork successful</h2>
-      <p>Welcome all KO LWIN !!</p>
+      <h2>Log in is successful</h2>
+      <p>Welcome KO LWIN !!</p>
 
       <template v-slot:links>
         <a href="">SignUp</a><a href="">LogIn</a>
@@ -41,7 +41,7 @@
 
     </AppModal>
   </div>
-  <button @click="showModalLP=!showModalLP" >Show Modal LP</button>
+  <button @click="showModalLP=!showModalLP" >Open Modal LP</button>
 
 </template>
 

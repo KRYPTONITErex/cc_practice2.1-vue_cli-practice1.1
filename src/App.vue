@@ -25,18 +25,18 @@
     
     </Modal>
   </div>
-  <button @click="showModal = !showModal">show modal</button>
+  <button @click="showModal = !showModal">Open modal</button>
 
 
   <div v-if="showModalLP">
     <Modal 
       :header="header" 
       :content="content"
-      :theme="theme"
+      theme="danger"
       @closeModal="showModalLP = !showModalLP">
     
-      <h1>This is KO Lwin Phyo success</h1>
-      <p>Congratulations</p>
+      <h1>Are you sure to LogOut</h1>
+      <p>See you again,</p>
 
       <template v-slot:links>
         <a href="">Sign Up</a>
@@ -45,7 +45,7 @@
     </Modal>
 
   </div>
-  <button @click="showModalLP = !showModalLP">Lwin Phyo Modal</button>
+  <button @click="showModalLP = !showModalLP">Delete Modal</button>
 
 
 </template>
@@ -59,8 +59,8 @@
       return {
         header: "Login is success",
         content: "Welcome user KoLwinPhyo",
-        // theme: "success",
-        theme: "danger",
+        theme: "success",
+        // theme: "danger",
         showModal: false,
         showModalLP: false
       }
